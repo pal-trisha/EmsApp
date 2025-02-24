@@ -1,0 +1,17 @@
+<h2>Edit Department</h2>
+<form #deptFrom ="ngForm"(ngSubmit)= "editDepartment()" novalidate>
+
+    <div>
+        <label for="id">Id</label>
+        <input type="text" name = "id" readonly [(ngModel)] ="dept.id" />
+    </div>
+
+    <label>Name</label>
+    <input type="text"  [(ngModel)] = "dept.name" name = "name" #nameInput = "ngModel" required/>
+    <!-- <input type="text"  [(ngModel)] = "dept.id" name = "id" #idInput = "ngModel" required/> -->
+    <div *ngIf = "nameInput.invalid && nameInput.touched" style = "color: red;">Department name is required</div>
+    <!-- <div *ngIf = "idInput.invalid && idInput.touched" style = "color: red;">Department id is required</div> -->
+    <br>
+    <button type="submit" [disabled]="deptFrom.invalid">Update</button>
+</form>
+

@@ -1,0 +1,58 @@
+<h2>Edit Employee</h2>
+<form #deptFrom ="ngForm"(ngSubmit)= "editEmployee()" novalidate>
+
+    <div>
+        <label for="id">Id</label>
+        <input type="text" name = "id" readonly [(ngModel)] ="emp.id" />
+    </div>
+
+    <label>Name : </label>
+    <input type="text"  [(ngModel)] = "emp.name" name = "name" #nameInput = "ngModel" required/>
+    <div *ngIf = "nameInput.invalid && nameInput.touched" style = "color: red;">Employee name is required</div>
+    <br>
+    <label for="doj">Date of Joining : </label>
+    <input type="date"
+           [(ngModel)]="emp.dateOfJoining"
+           name="doj"
+           #dojModule="ngModel"
+           required/>
+    <div *ngIf="dojModule.invalid && dojModule.touched" style="color: red;">
+        Date of joining is required.
+    </div>
+    <br/>
+    <label for="email">Email : </label>
+        <input type="email"
+               [(ngModel)]="emp.email"
+               name="email"
+               #emailModule="ngModel"
+               required/>
+        <div *ngIf="emailModule.invalid && emailModule.touched" style="color: red;">
+            Valid email is required.
+        </div>
+        <br/>
+    <label for="mobile">Mobile Number : </label>
+        <input type="tel"
+               [(ngModel)]="emp.mobileNo"
+               name="mobile"
+               #mobileModule="ngModel"
+               required pattern="[0-9]{10}"/>
+        <div *ngIf="mobileModule.invalid && mobileModule.touched" style="color: red;">
+            Valid 10-digit mobile number is required.
+        </div>
+        <br/>
+    <label for="employee">Department : </label>
+        <select [(ngModel)]="emp.deptId" name="department" #deptModule="ngModel" required>
+            <option value="" disabled selected>Select department</option>
+            <option value="101">HR</option>
+            <option value="102">IT</option>
+            <option value="103">Marketing</option>
+            <option value="104">Sales</option>
+        </select>
+        <div *ngIf="deptModule.invalid && deptModule.touched" style="color: red;">
+            Department is required.
+        </div>
+        <br/>
+    <button type="submit" [disabled]="deptFrom.invalid">Update</button>
+</form>
+
+

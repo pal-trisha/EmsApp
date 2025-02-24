@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <a href="">Department List |</a>
+    <a href=""> Employee List</a> -->
+     <!-- relative url -->
+     <a [routerLink]="['/departments/add']"><input type="button" value="Add Department"></a> 
+     <!-- absolute url -->
+     <!-- <a [routerLink]="['/departments/add']">Add Department</a> -->
+    <br>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let dept of list">
+    <td>{{dept.id}}</td>
+    <td>{{dept.name}}</td>
+    <td><a [routerLink]="['/departments/edit',dept.id]"><input type="button" value="Edit"></a> </td>
+    <!-- <td><a [routerLink]="['/departments/edit',dept.id]">Edit</a></td> -->
+    </tr> 
+    </tbody>  
+</table>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Amit Sharma",
+      "dateOfJoining": "2020-06-15",
+      "email": "amit.sharma@example.com",
+      "mobileNo": "9876543210",
+      "deptId": 101
+    },
+    {
+      "id": 2,
+      "name": "Priya Verma",
+      "dateOfJoining": "2018-09-25",
+      "email": "priya.verma@example.com",
+      "mobileNo": "9876543211",
+      "deptId": 102
+    },
+    {
+      "id": 3,
+      "name": "Rajesh Kumar",
+      "dateOfJoining": "2019-11-10",
+      "email": "rajesh.kumar@example.com",
+      "mobileNo": "9876543212",
+      "deptId": 101
+    },
+    {
+      "id": 5,
+      "name": "Trisha Pal",
+      "deptId": "102",
+      "email": "tri@gmail.com",
+      "mobileNo": "9876577778",
+      "dateOfJoining": "2025-02-03"
+    }
+  ],
+  "departments": [
+    {
+      "id": 101,
+      "name": "IT"
+    },
+    {
+      "id": 102,
+      "name": "HR"
+    },
+    {
+      "id": 103,
+      "name": "Support"
+    },
+    {
+      "id": 104,
+      "name": "Test dept"
+    }
+  ]
+}

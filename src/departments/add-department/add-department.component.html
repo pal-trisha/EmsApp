@@ -1,0 +1,9 @@
+<h2>Add Department</h2>
+<form #deptFrom ="ngForm"(ngSubmit)= "addDepartment()" novalidate>
+    <label>Department Name:</label>
+    <input type="text"  [(ngModel)] = "dept.name" name = "name" #nameInput = "ngModel" required/>
+    <div *ngIf = "nameInput.invalid && nameInput.touched" style = "color: red;">Department name is required</div>
+    <br>
+    <button type="submit" [disabled]="deptFrom.invalid">Add</button>
+</form>
+
