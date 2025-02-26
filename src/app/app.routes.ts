@@ -5,6 +5,9 @@ import { EditDepartmentComponent } from '../departments/edit-department/edit-dep
 import { ListEmployeeComponent } from '../employees/list-employee/list-employee.component';
 import { AddEmployeeComponent } from '../employees/add-employee/add-employee.component';
 import { EditEmployeeComponent } from '../employees/edit-employee/edit-employee.component';
+import { DeleteEmployeeComponent } from '../employees/delete-employee/delete-employee.component';
+import { LoginComponent } from '../auth/login/login.component';
+import { RegisterComponent } from '../auth/register/register.component';
 
 export const routes: Routes = [
     {path :'departments' ,component : ListDepartmentComponent},
@@ -13,5 +16,8 @@ export const routes: Routes = [
     {path :'employees', component: ListEmployeeComponent},
     {path :'employees/add', component: AddEmployeeComponent},
     {path :'employees/edit/:id',component:EditEmployeeComponent},
-    {path :'employee/delete/:id', component: EditEmployeeComponent}
+    {path :'employee/delete/:id', component: DeleteEmployeeComponent},
+    {path:'login', component:LoginComponent},
+    {path:'register', component:RegisterComponent},
+    {path:'**',redirectTo:'login'} //**-base part
 ];

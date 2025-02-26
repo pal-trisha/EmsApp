@@ -51,7 +51,7 @@
         </div>
         <br/>
  
-        <label for="employee">Department : </label>
+        <!-- <label for="employee">Department : </label>
         <select [(ngModel)]="emp.deptId" name="department" #deptModule="ngModel" required>
             <option value="" disabled selected>Select department</option>
             <option value="101">HR</option>
@@ -61,6 +61,27 @@
         </select>
         <div *ngIf="deptModule.invalid && deptModule.touched" style="color: red;">
             Department is required.
+        </div>
+        <br/> -->
+        
+         <!-- <label for="employee">Department:</label>
+        <select [(ngModel)]="emp.deptId" name="department" #deptModule="ngModel" required>
+            <option value="" disabled selected>Select department</option>
+            <option value="101">HR</option>
+            <option value="102">IT</option>
+            <option value="103">Accounts</option>
+            <option value="104">Sales</option>
+            <option *ngFor="let dept of list" [value]="dept.id">{dept.name}</option> -->
+
+        <label for="deptId">Department</label>
+        <select name="deptId" [(ngModel)]="emp.deptId" #deptInput="ngModel" required >
+        <option value="">Select</option>
+       
+        <option *ngFor="let dept of list" [value]="dept.id">{{dept.name}}</option>
+        </select>
+   
+        <div *ngIf="deptInput.invalid && deptInput.touched" style="color: red;">
+        Please select department.
         </div>
         <br/>
  

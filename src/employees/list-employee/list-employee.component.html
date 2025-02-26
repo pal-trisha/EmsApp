@@ -1,26 +1,49 @@
-
-<a [routerLink]="['/employees/add']"><input type="button" value="Add Employee"></a> 
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Date Of Joining</th>
-            <th>Email</th>
-            <th>Mobile No</th>
-            <th>Department Id</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let emp of list">
-        <td>{{emp.id}}</td>
-        <td>{{emp.name}}</td>
-        <td>{{emp.dateOfJoining}}</td>
-        <td>{{emp.email}}</td>
-        <td>{{emp.mobileNo}}</td>
-        <td>{{emp.deptId}}</td>
-        <td><a [routerLink]="['/employees/edit',emp.id]"><input type="button" value="Edit"></a></td>
-        <td><a [routerLink]="['/employee/delete']"><input type="button" value="Delete"></a></td>
-    </tbody>
-</table>
+<html>
+    <head>
+        <title>
+           
+        </title>
+    </head>
+    <body>
+        <h1>Employees</h1>
+ <!-- <a routerLink="add">Add Employees</a>  -->
+        <!-- <input type="button" value="Add"> -->
+         <a [routerLink]="['/employees/add']">Add Employees</a>
+        <table>
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Date Of Joining</th>
+              <th>Email</th>
+              <th>Mobile No</th>
+              <th>Dept Id</th>
+              <th>Actions</th>
+             
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of list">
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.dateOfJoining}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.mobileNo}}</td>
+                <td>{{emp.deptId}}</td>
+                <td>
+                <!-- <a [routerLink]="['/employees/edit/', emp.id]">Edit</a> -->
+                <button (click)="delete(emp.id)"><a [routerLink]="['/employees/edit/', emp.id]">Edit</a>
+                </button>
+                <button (click)="delete(emp.id)">Delete
+                </button> </td>
+                <!-- <td>
+                    <input type="button" [routerLink]="['/employees/edit/', emp.id]">Edit
+                </td> -->
+              <!-- <td><input type="button" value="Edit"></td> -->
+            </tr>
+        </tbody>
+          </table>
+    </body>
+</html>
+ 
+ 

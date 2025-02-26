@@ -31,7 +31,13 @@ export class EmployeeService {
   } 
 
   edit(emp:Employee):Observable<Employee>
-    {
-      return this.client.put<Employee>(`${this.apiUrl}/${emp.id}`,emp);
-    }
+  {
+    return this.client.put<Employee>(`${this.apiUrl}/${emp.id}`,emp);
+  }
+
+  delete(id:number):Observable<Employee>
+  {
+    return this.client.delete<Employee>(`${this.apiUrl}/${id}`);
+  }
+
 }

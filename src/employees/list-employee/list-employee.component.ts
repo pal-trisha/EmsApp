@@ -1,11 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
+ 
 @Component({
   selector: 'app-list-employee',
   standalone: true,
@@ -14,18 +12,35 @@ import { RouterModule } from '@angular/router';
   styleUrl: './list-employee.component.css'
 })
 export class ListEmployeeComponent {
-
- list : Employee[]=[];
-
- constructor(private empService:EmployeeService)
- {}
-
+list: Employee[]=[];
+ constructor(private empService: EmployeeService)
+ {
+ 
+ }
  ngOnInit()
  {
-    this.empService.getList().subscribe(data => {
-    this.list=data;
-    console.log(data);
-  }    
+ 
+ this.getList();
+ }
+ getList(){
+  this.empService.getList().subscribe(d=>
+  {
+    this.list=d;
+    console.log(d);
+  },err=>{
+    console.log(err);
+    alert('Error');
+  }
   );
+ }
+delete(id:number){
+  this.empService.delete(id).subscribe(d=>{
+    alert("Deleted successfully");
+  },err=>{
+    console.log(err);
+    alert("error");
+  });
+ 
+ 
 }
 }

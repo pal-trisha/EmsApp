@@ -1,11 +1,57 @@
 {
+  "projects": [
+    {
+      "id": 1,
+      "name": "ERP System Development",
+      "startDate": "2023-04-15",
+      "endDate": "2024-06-30",
+      "deptId": 101
+    },
+    {
+      "id": 2,
+      "name": "E-Commerce Platform",
+      "startDate": "2022-09-10",
+      "endDate": "2024-12-01",
+      "deptId": 102
+    },
+    {
+      "id": 3,
+      "name": "AI Chatbot Integration",
+      "startDate": "2024-02-01",
+      "endDate": null,
+      "deptId": 102
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Jon Snow",
+      "email": "jon@example.com",
+      "password": "123456",
+      "token": "mock-jwt-token"
+    },
+    {
+      "id": 2,
+      "name": "Arya Stark",
+      "email": "arya@example.com",
+      "password": "123456",
+      "token": "mock-jwt-token"
+    },
+    {
+      "username": "trisha",
+      "email": "tri@gmail.com",
+      "password": "asdfghjk",
+      "token": "mock-jwt-token",
+      "id": 3
+    }
+  ],
   "employees": [
     {
       "id": 1,
-      "name": "Amit Sharma",
-      "dateOfJoining": "2020-06-15",
-      "email": "amit.sharma@example.com",
-      "mobileNo": "9876543210",
+      "name": "Param Sharma",
+      "dateOfJoining": "2018-09-25",
+      "email": "param.sharma@example.com",
+      "mobileNo": "9876543211",
       "deptId": 101
     },
     {
@@ -25,7 +71,7 @@
       "deptId": 101
     },
     {
-      "id": 5,
+      "id": 4,
       "name": "Trisha Pal",
       "deptId": "102",
       "email": "tri@gmail.com",
