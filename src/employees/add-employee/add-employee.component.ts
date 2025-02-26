@@ -17,7 +17,7 @@ import { Department } from '../../departments/department';
   styleUrl: './add-employee.component.css'
 })
 export class AddEmployeeComponent {
-  emp:Employee={id:0,name:'',dateOfJoining:new Date(),email:'',mobileNo:0,deptId:0};
+  emp:Employee={id:0,name:'',dateOfJoining:new Date(),email:'',mobileNo:0,deptId:0,salary:0,gender:''};
   list:Department[]=[];
   constructor(private empService:EmployeeService, private router:Router, private deptService:DepartmentService)
   { }

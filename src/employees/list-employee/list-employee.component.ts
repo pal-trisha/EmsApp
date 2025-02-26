@@ -26,7 +26,7 @@ list: Employee[]=[];
   this.empService.getList().subscribe(d=>
   {
     this.list=d;
-    console.log(d);
+    console.log(this.list);
   },err=>{
     console.log(err);
     alert('Error');

@@ -1,92 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Form</title>
-</head>
-<body>
-    <form #empForm="ngForm" (ngSubmit)="addEmployee()">
-        <label for="name">Name : </label>
-        <input type="text"
-               [(ngModel)]="emp.name"
-               name="name"
-               #nameModule="ngModel"
-               required/>
-        <div *ngIf="nameModule.invalid && nameModule.touched" style="color: red;">
-            Employee name is required.
-        </div>
-        <br/>
- 
-        <label for="doj">Date of Joining : </label>
-        <input type="date"
-               [(ngModel)]="emp.dateOfJoining"
-               name="doj"
-               #dojModule="ngModel"
-               required/>
-        <div *ngIf="dojModule.invalid && dojModule.touched" style="color: red;">
-            Date of joining is required.
-        </div>
-        <br/>
- 
-        <label for="email">Email : </label>
-        <input type="email"
-               [(ngModel)]="emp.email"
-               name="email"
-               #emailModule="ngModel"
-               required/>
-        <div *ngIf="emailModule.invalid && emailModule.touched" style="color: red;">
-            Valid email is required.
-        </div>
-        <br/>
- 
-        <label for="mobile">Mobile Number : </label>
-        <input type="tel"
-               [(ngModel)]="emp.mobileNo"
-               name="mobile"
-               #mobileModule="ngModel"
-               required pattern="[0-9]{10}"/>
-        <div *ngIf="mobileModule.invalid && mobileModule.touched" style="color: red;">
-            Valid 10-digit mobile number is required.
-        </div>
-        <br/>
- 
-        <!-- <label for="employee">Department : </label>
-        <select [(ngModel)]="emp.deptId" name="department" #deptModule="ngModel" required>
-            <option value="" disabled selected>Select department</option>
-            <option value="101">HR</option>
-            <option value="102">IT</option>
-            <option value="103">Marketing</option>
-            <option value="104">Sales</option>
-        </select>
-        <div *ngIf="deptModule.invalid && deptModule.touched" style="color: red;">
-            Department is required.
-        </div>
-        <br/> -->
-        
-         <!-- <label for="employee">Department:</label>
-        <select [(ngModel)]="emp.deptId" name="department" #deptModule="ngModel" required>
-            <option value="" disabled selected>Select department</option>
-            <option value="101">HR</option>
-            <option value="102">IT</option>
-            <option value="103">Accounts</option>
-            <option value="104">Sales</option>
-            <option *ngFor="let dept of list" [value]="dept.id">{dept.name}</option> -->
-
-        <label for="deptId">Department</label>
-        <select name="deptId" [(ngModel)]="emp.deptId" #deptInput="ngModel" required >
-        <option value="">Select</option>
-       
-        <option *ngFor="let dept of list" [value]="dept.id">{{dept.name}}</option>
-        </select>
+<form #empForm="ngForm" (ngSubmit)="addEmployee()">
    
-        <div *ngIf="deptInput.invalid && deptInput.touched" style="color: red;">
-        Please select department.
-        </div>
-        <br/>
+    <label for="name">Name</label>
+    <input type="text" required name="name" [(ngModel)]="emp.name" #nameInput="ngModel" />
+    <div *ngIf="nameInput.invalid && nameInput.touched" style="color:purple;">
+        Employee name is required.
+    </div>
+    <br/>
  
-        <button type="submit" [disabled]="empForm.invalid">Add</button>
-    </form>
-</body>
-</html>
+    <label for="dateOfJoining">Date of Joining</label>
+    <input type="date" required name="dateOfJoining" [(ngModel)]="emp.dateOfJoining" #dateInput="ngModel" />
+    <div *ngIf="dateInput.invalid && dateInput.touched" style="color:purple;">
+        Date of Joining is required.
+    </div>
+    <br/>
+ 
+    <label for="email">Email</label>
+    <input type="email" required name="email" [(ngModel)]="emp.email" #emailInput="ngModel" />
+    <div *ngIf="emailInput.invalid && emailInput.touched" style="color:purple;">
+        Valid Email is required.
+    </div>
+    <br/>
+ 
+    <label for="mobileNo">Mobile No</label>
+    <input type="tel" required name="mobileNo" [(ngModel)]="emp.mobileNo" #mobileInput="ngModel" pattern="[0-9]{10}" />
+    <div *ngIf="mobileInput.invalid && mobileInput.touched" style="color:purple;">
+        Mobile number must be 10 digits.
+    </div>
+    <br/>
+ 
+    <label for="salary">Salary</label>
+    <input type="number" required name="salary" [(ngModel)]="emp.salary" #salaryInput="ngModel" min="1" />
+    <div *ngIf="salaryInput.invalid && salaryInput.touched" style="color:purple;">
+        Salary is required and must be a positive number.
+    </div>
+    <br/>
+ 
+    <label>Gender:</label>
+    <br/>
+    <input type="radio" [(ngModel)]="emp.gender" name="gender" value="Male" #genderInput="ngModel" required /> Male
+    <input type="radio" [(ngModel)]="emp.gender" name="gender" value="Female" required /> Female
+    <input type="radio" [(ngModel)]="emp.gender" name="gender" value="Other" required /> Other
+    <div *ngIf="genderInput.invalid && genderInput.touched" style="color:purple;">
+        Please select a gender.
+    </div>
+    <br/>
+ 
+    <label for="deptId">Dept Id</label>
+    <select [(ngModel)]="emp.deptId" name="department" #deptModule="ngModel" required>
+        <option value="" disabled selected>Select department</option>
+        <option value="101">HR</option>
+        <option value="102">Engineering</option>
+        <option value="103">Marketing</option>
+        <option value="104">Sales</option>
+        <option *ngFor="let dept of list" [value]="dept.id">{{ dept.name }}</option>
+    </select>
+    <div *ngIf="deptModule.invalid && deptModule.touched" style="color: red;">
+        Department is required.
+    </div>
+    <br/>
+ 
+    <button type="submit" [disabled]="empForm.invalid">Add</button>
+ 
+</form>
  

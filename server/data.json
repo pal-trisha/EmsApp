@@ -48,11 +48,13 @@
   "employees": [
     {
       "id": 1,
-      "name": "Param Sharma",
-      "dateOfJoining": "2018-09-25",
-      "email": "param.sharma@example.com",
-      "mobileNo": "9876543211",
-      "deptId": 101
+      "name": "Amit Sharma",
+      "dateOfJoining": "2020-06-15",
+      "email": "amit.sharma@example.com",
+      "mobileNo": "9876543210",
+      "deptId": 101,
+      "salary": 23000,
+      "gender": "Male"
     },
     {
       "id": 2,
@@ -60,7 +62,9 @@
       "dateOfJoining": "2018-09-25",
       "email": "priya.verma@example.com",
       "mobileNo": "9876543211",
-      "deptId": 102
+      "deptId": 102,
+      "salary": 32000,
+      "gender": "Female"
     },
     {
       "id": 3,
@@ -68,7 +72,9 @@
       "dateOfJoining": "2019-11-10",
       "email": "rajesh.kumar@example.com",
       "mobileNo": "9876543212",
-      "deptId": 101
+      "deptId": 101,
+      "salary": 30000,
+      "gender": "Male"
     },
     {
       "id": 4,
@@ -76,7 +82,19 @@
       "deptId": "102",
       "email": "tri@gmail.com",
       "mobileNo": "9876577778",
-      "dateOfJoining": "2025-02-03"
+      "dateOfJoining": "2025-02-03",
+      "salary": 25000,
+      "gender": "Female"
+    },
+    {
+      "id": 5,
+      "name": "Rekha",
+      "dateOfJoining": "2025-02-18",
+      "email": "re@gmail.com",
+      "mobileNo": "0987654321",
+      "deptId": "102",
+      "salary": 250,
+      "gender": "Female"
     }
   ],
   "departments": [

@@ -9,7 +9,7 @@
  <!-- <a routerLink="add">Add Employees</a>  -->
         <!-- <input type="button" value="Add"> -->
          <a [routerLink]="['/employees/add']">Add Employees</a>
-        <table>
+         <table class="table table-secondary table-striped">
             <thead>
             <tr>
               <th>ID</th>
@@ -18,8 +18,9 @@
               <th>Email</th>
               <th>Mobile No</th>
               <th>Dept Id</th>
-              <th>Actions</th>
-             
+              <th>Salary</th>
+              <th>Gender</th>
+              <th>Actions</th>   
             </tr>
         </thead>
         <tbody>
@@ -30,6 +31,8 @@
                 <td>{{emp.email}}</td>
                 <td>{{emp.mobileNo}}</td>
                 <td>{{emp.deptId}}</td>
+                <td>{{emp.salary}}</td>
+                <td>{{emp.gender}}</td>
                 <td>
                 <!-- <a [routerLink]="['/employees/edit/', emp.id]">Edit</a> -->
                 <button (click)="delete(emp.id)"><a [routerLink]="['/employees/edit/', emp.id]">Edit</a>

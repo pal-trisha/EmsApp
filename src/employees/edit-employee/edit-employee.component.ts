@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class EditEmployeeComponent {
 
-  emp:Employee ={id:0,name:'',deptId :0,email:'',mobileNo: 0,dateOfJoining:new Date()};
+  emp:Employee ={id:0,name:'',deptId :0,email:'',mobileNo: 0,dateOfJoining:new Date(),salary:0,gender:''};
   
   constructor(private empService:EmployeeService, private router :Router, private route:ActivatedRoute)
   {}
